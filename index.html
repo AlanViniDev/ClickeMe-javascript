@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+    function fixWich(e) {
+        if (!e.which && e.button) {
+            if (e.button & 1) e.which = 1;
+        }
+    }
+    
+    function alerts () {
+        alert3();
+        document.getElementById('aClickMe').onclick = function(event) {
+            fixWich(event);
+               switch(event.which) {
+                   case 1:
+                    alert4();
+                }
+            alerts3();
+        }
+    }
+            
+    function alerts4 () {
+        alerts4();
+        document.getElementById('aClickMe').onclick = function(event) {
+            fixWich(event);
+               switch(event.which) {
+                   case 1:
+                    alerts3();
+               }
+            alerts3();
+        }
+    }
+
+    function alerts4 () {
+        document.getElementById('aClickMe').onclick = function(event) {
+            fixWich(event);
+                switch(event.which) {
+                    case 1:
+                     alert4();
+                }
+            alerts3();
+        }
+    }
+    
+    function alerts3 () {
+        alerts4();
+        document.getElementById('aClickMe').onclick = function(event) {
+            fixWich(event);
+               switch(event.which) {
+                   case 1:
+                    alert3();
+                }
+            alerts4();
+        }
+    }
+
+    function alert3 (){
+        alert("3");
+    }
+
+    function alert4 (){
+           alert("4");
+    }
+
+    </script>
+
+    <button  id = "aClickMe" onclick = "alerts()" >Clique aqui.</button>
+
+</body>
+</html>
